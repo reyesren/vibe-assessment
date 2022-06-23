@@ -24,6 +24,11 @@ export class ShoppingListService {
     this.ingredientsChanged.next(this.ingredients.slice());
   }
 
+  getIngredientIndexByName(ingredientName: string) { 
+    const ingredientInd = this.getIngredients().findIndex((ing: Ingredient) => ing.name === ingredientName);
+    return ingredientInd;
+  }
+
   addIngredients(ingredients: Ingredient[]) {
     // for (let ingredient of ingredients) {
     //   this.addIngredient(ingredient);
